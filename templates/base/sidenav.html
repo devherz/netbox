@@ -1,0 +1,51 @@
+{% load navigation %}
+{% load static %}
+{% load i18n %}
+
+<nav class="sidenav noprint" id="sidenav" data-simplebar>
+  <div class="sidenav-header">
+
+  {# Brand #}
+
+    {# Full Logo #}
+    <a class="sidenav-brand" href="{% url 'home' %}">
+      <br>
+      <img src="{% static 'logo.png' %}" 
+      height="70" 
+      class="sidenav-brand-img" 
+      
+      style="display: block; margin: 0 auto;">
+      
+     
+    </a>
+
+    {# Icon Logo #}
+    <a class="sidenav-brand-icon" href="{% url 'home' %}">
+      <img src="{% static 'logo.png' %}" height="90" class="sidenav-brand-img" 
+    </a>
+
+    {# Pin/Unpin Toggle #}
+    <button class="btn btn-sm btn-ghost-primary sidenav-toggle">
+      <div class="sidenav-toggle-icon">
+        <i class="mdi mdi-pin"></i>
+      </div>
+    </button>
+
+  </div>
+
+  <div class="sidenav-inner h-100 mb-auto">
+
+    {# Collapse #}
+    <div class="collapse sidenav-collapse pb-4">
+
+      {# Nav Items #}
+      {% nav %}
+
+    </div>
+
+    {# Profile controls #}
+    <div class="profile-button-container">
+      {% include 'inc/profile_button.html' %}
+    </div>
+  </div>
+</nav>
